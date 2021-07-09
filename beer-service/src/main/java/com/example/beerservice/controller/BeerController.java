@@ -21,7 +21,7 @@ public class BeerController {
 
     @GetMapping("/")
     public String getBeerHome() {
-        return "Welcome to Ingram Brewery!";
+        return "Welcome from the Beer Service!";
     }
 
     @GetMapping("/all-beers")
