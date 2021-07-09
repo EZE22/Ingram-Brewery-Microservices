@@ -1,0 +1,27 @@
+
+
+$sqlite3 beer.db
+
+.databases
+
+CREATE TABLE
+    beer
+    (
+		beerid BIGINT NOT NULL,
+		beername VARCHAR,
+		brewdate VARCHAR,
+		alcoholpercent double,
+		quantityonhand int,
+		PRIMARY KEY (beerid)
+	);
+	
+	
+INSERT INTO beer (beerid, beername ,brewdate, alcoholpercent, quantityonhand) 
+VALUES (1, 'Bud Light', '1/1/2001', 5.0, 5);	
+
+INSERT INTO beer (beerid, beername, brewdate, alcoholpercent, quantityonhand) 
+VALUES (2, 'Guinness', '1/2/2001', 5.1, 5);	
+
+INSERT INTO beer (beerid, beername, brewdate, alcoholpercent, quantityonhand) 
+VALUES (3, 'Yanjing', '1/3/2001', 5.2, 5);	
+
