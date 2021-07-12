@@ -4,6 +4,7 @@ import java.math.BigInteger;
 
 public class User {
     private BigInteger userid;
+    private BigInteger beerid;
     private String username;
     private String email;
 
@@ -16,6 +17,14 @@ public class User {
 
     public void setUserid(BigInteger userid) {
         this.userid = userid;
+    }
+
+    public BigInteger getBeerid() {
+        return beerid;
+    }
+
+    public void setBeerid(BigInteger beerid) {
+        this.beerid = beerid;
     }
 
     public String getUsername() {
@@ -38,6 +47,7 @@ public class User {
     public String toString() {
         return "User{" +
                 "userid=" + userid +
+                ", beerid=" + beerid +
                 ", username='" + username + '\'' +
                 ", email='" + email + '\'' +
                 '}';

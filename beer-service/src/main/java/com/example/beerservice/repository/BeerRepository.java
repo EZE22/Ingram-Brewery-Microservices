@@ -9,4 +9,5 @@ import java.math.BigInteger;
 @Repository
 public interface BeerRepository extends JpaRepository<Beer, BigInteger> {
     Beer findAllByBeername(String beerName);
+    Beer findBeerByBeerid(BigInteger id);
 }

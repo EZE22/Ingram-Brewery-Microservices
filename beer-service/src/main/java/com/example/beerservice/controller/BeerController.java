@@ -29,6 +29,11 @@ public class BeerController {
         return repository.findAll();
     }
 
+    @GetMapping("/beer-id/{id}")
+    public Beer getById(@PathVariable("id") BigInteger id) {
+        return repository.findBeerByBeerid(id);
+    }
+
     @GetMapping("/{name}")
     public Beer getBeerByName(@PathVariable("name") String name) {
         return repository.findAllByBeername(name);
@@ -39,7 +44,7 @@ public class BeerController {
         repository.save(course);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete-beer/{id}")
     public void deleteBeer(@PathVariable("id") BigInteger id) {
         repository.deleteById(id);
     }
