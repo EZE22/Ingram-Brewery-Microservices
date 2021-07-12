@@ -35,12 +35,12 @@ public class BeerController {
     }
 
     @PostMapping("/create")
-    public void saveCourse(@RequestBody Beer course) {
+    public void saveBeer(@RequestBody Beer course) {
         repository.save(course);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteCourse(@PathVariable("id") BigInteger id) {
+    public void deleteBeer(@PathVariable("id") BigInteger id) {
         repository.deleteById(id);
     }
 }
