@@ -1,0 +1,25 @@
+
+
+$sqlite3 user.db
+
+.databases
+
+CREATE TABLE
+    user
+    (
+		userid BIGINT NOT NULL,
+		username VARCHAR,
+		email VARCHAR,
+		PRIMARY KEY (userid)
+	);
+	
+	
+INSERT INTO user (userid, username , email) 
+VALUES (1, 'Adam Ingram', 'adam.ingram@gmail.com');	
+
+INSERT INTO user (userid, username , email) 
+VALUES (2, 'Lindsay Ingram', 'lindsay.ingram@gmail.com');
+
+INSERT INTO user (userid, username , email) 
+VALUES (3, 'Luke Skywalker', 'luke.skywalker@gmail.com');	
+
