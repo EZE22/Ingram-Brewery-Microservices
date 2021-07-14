@@ -47,35 +47,4 @@ public class BreweryController {
         return "Beers: " + menu;
     }
 
-    //TODO add get all user
-
-    //After adding the User
-    //http://localhost:8002/Adam Ingram
-    @GetMapping("/{name}")
-    public String getBeerOrder(@PathVariable("name") String name) {
-
-        RestTemplate template = new RestTemplate();
-        Beer beer = new Beer();
-        User user = new User();
-
-        //Fetching User info
-        InstanceInfo instanceInfo = client.getNextServerFromEureka("user-service", false);
-        String userURL = instanceInfo.getHomePageUrl();
-        userURL = userURL + name;
-        user = template.getForObject(userURL, User.class);
-
-        //Fetching Beer info
-        instanceInfo = client.getNextServerFromEureka("beer-service",false);
-        String beerURL = instanceInfo.getHomePageUrl();
-        beerURL = beerURL + "/beer-id/" + user.getBeerid();
-        beer = template.getForObject(beerURL, Beer.class);
-
-        return("Order: \n"
-                + "Customer name: " + user.getUsername() + "\n"
-                + "Beer Order: " + beer.getBeername()
-                + " Inventory: " + beer.getQuantityonhand()
-        );
-
-    }
-
 }
